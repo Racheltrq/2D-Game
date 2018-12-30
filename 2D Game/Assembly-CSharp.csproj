@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\forward.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Rachel Tao/Documents/GitHub/2D-Game/2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

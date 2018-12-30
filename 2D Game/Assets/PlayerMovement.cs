@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal_raw = Input.GetAxis("Horizontal");
         float moveVertical_raw = Input.GetAxis("Vertical");
 
-        Debug.Log(moveHorizontal_raw);
         if (moveHorizontal_raw >= 0) { 
             if (prev_speed <= moveHorizontal_raw)
             {
