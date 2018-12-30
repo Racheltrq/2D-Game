@@ -3,7 +3,7 @@
 # Progress:  
  - ~~Player can stand on a platform~~
  - ~~Player can move without experiencing any lag(accelaration)~~
- - ~~Player can walk and jump
+ - ~~Player can walk and jump~~
  - Camera movement
  - Player animation(all states)
  - (to be listed)
