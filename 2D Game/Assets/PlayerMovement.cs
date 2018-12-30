@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     public float speed;
     private float accelation;
     private Rigidbody2D player;
@@ -24,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical_raw = Input.GetAxis("Vertical");
 
         Debug.Log(moveHorizontal_raw);
-        if (moveHorizontal_raw > 0) { 
+        if (moveHorizontal_raw >= 0) { 
             if (prev_speed <= moveHorizontal_raw)
             {
                 if (moveHorizontal_raw > 0) moveHorizontal = 1;
@@ -34,19 +35,27 @@ public class PlayerMovement : MonoBehaviour
             {
                 moveHorizontal = 0;
             }
-            prev_speed = moveHorizontal_raw;
+            
         }
         else
         {
-            moveHorizontal = 0;
+            if (prev_speed >= moveHorizontal_raw)
+            {
+                if (moveHorizontal_raw < 0) moveHorizontal = -1;
+                else moveHorizontal = 0;
+            }
+            else
+            {
+                moveHorizontal = 0;
+            }
         }
-
+        prev_speed = moveHorizontal_raw;
         if (moveVertical_raw > 0)
         {
             moveVertical = 1.2f;
         };
 
-
+        animator.SetFloat("speed", Mathf.Abs(moveHorizontal));
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         player.AddForce(movement * speed);
