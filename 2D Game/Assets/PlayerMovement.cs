@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal_raw = Input.GetAxis("Horizontal");
         float moveVertical_raw = Input.GetAxis("Vertical");
 
+
+
+
         if (moveHorizontal_raw >= 0) { 
             if (prev_speed <= moveHorizontal_raw)
             {
@@ -57,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(moveHorizontal));
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         player.AddForce(movement * speed);
-        movement.x = Mathf.Clamp(player.position.x, -0.5f, 15);
         //player.AddForce(transform.up * speed);
     }
 }
