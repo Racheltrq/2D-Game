@@ -14,7 +14,7 @@ public class forward : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(
-            Mathf.Clamp(player.transform.position.x, 0.4f, 15),
+            Mathf.Clamp(player.transform.position.x, 1.8f, 15),
             Mathf.Clamp(player.transform.position.y, 0.0f, 2.8f),
             transform.position.z);
     }
